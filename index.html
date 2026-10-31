@@ -82,6 +82,19 @@
     .hero{gap:40px}
     .hero-brand-row{display:flex;align-items:center;justify-content:space-between;gap:18px;width:100%;margin:0 0 24px}
     .hero-join-image-link{display:block;flex:1;min-width:0;max-width:390px;line-height:0;border-radius:20px;overflow:hidden;box-shadow:0 10px 26px #1769c21a}
+    /* Soft breathing pulse for the large Telegram invitation graphic */
+    .hero-join-image-link{
+      transform-origin:center;
+      animation:telegramPulse 1.7s ease-in-out infinite;
+      will-change:transform,box-shadow;
+    }
+    @keyframes telegramPulse{
+      0%,100%{transform:scale(1);box-shadow:0 10px 26px #1769c226}
+      50%{transform:scale(1.055);box-shadow:0 15px 36px #1769c255}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .hero-join-image-link{animation:none;will-change:auto}
+    }
     .hero-join-image{display:block;width:100%;height:auto;object-fit:contain}
     .hero-logo-link{display:flex;align-items:center;justify-content:center;flex:0 0 auto;width:clamp(132px,20vw,158px);line-height:0}
     .hero-logo-small{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:18px;box-shadow:0 9px 22px #1769c21f}
